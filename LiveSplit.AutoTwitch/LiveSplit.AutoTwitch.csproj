@@ -67,6 +67,12 @@
     <Compile Include="UI\Components\AutoTwitchSettings.Designer.cs">
       <DependentUpon>AutoTwitchSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Components\MessageSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\MessageSettings.Designer.cs">
+      <DependentUpon>MessageSettings.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\LiveSplit.Core\LiveSplit.Core.csproj">
@@ -85,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\AutoTwitchSettings.resx">
       <DependentUpon>AutoTwitchSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\MessageSettings.resx">
+      <DependentUpon>MessageSettings.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

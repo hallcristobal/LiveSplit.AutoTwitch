@@ -103,31 +103,31 @@
             // 
             // lblUsername
             // 
-            this.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUsername.AutoSize = true;
             this.lblUsername.Location = new System.Drawing.Point(3, 8);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(58, 13);
+            this.lblUsername.Size = new System.Drawing.Size(79, 13);
             this.lblUsername.TabIndex = 3;
             this.lblUsername.Text = "Username:";
             // 
             // lblOAuth
             // 
-            this.lblOAuth.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblOAuth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblOAuth.AutoSize = true;
             this.lblOAuth.Location = new System.Drawing.Point(3, 37);
             this.lblOAuth.Name = "lblOAuth";
-            this.lblOAuth.Size = new System.Drawing.Size(68, 13);
+            this.lblOAuth.Size = new System.Drawing.Size(79, 13);
             this.lblOAuth.TabIndex = 4;
             this.lblOAuth.Text = "OAuth Code:";
             // 
             // lblChannel
             // 
-            this.lblChannel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblChannel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblChannel.AutoSize = true;
             this.lblChannel.Location = new System.Drawing.Point(3, 66);
             this.lblChannel.Name = "lblChannel";
-            this.lblChannel.Size = new System.Drawing.Size(49, 13);
+            this.lblChannel.Size = new System.Drawing.Size(79, 13);
             this.lblChannel.TabIndex = 5;
             this.lblChannel.Text = "Channel:";
             // 

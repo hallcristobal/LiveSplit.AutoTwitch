@@ -39,7 +39,7 @@ namespace LiveSplit.AutoTwitch
             {
                 if (State.Run[lastSplit].BestSegmentTime[State.CurrentTimingMethod] == null || curSegment < State.Run[lastSplit].BestSegmentTime[State.CurrentTimingMethod])
                 {
-                    Console.WriteLine("HI!");
+                    
                 }
             }
         }
