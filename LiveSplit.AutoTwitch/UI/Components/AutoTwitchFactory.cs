@@ -1,12 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using LiveSplit.AutoTwitch;
+using LiveSplit.UI.Components;
+using LiveSplit.Model;
 
-namespace LiveSplit.UI.Components
+[assembly: ComponentFactory(typeof(TwitchFactory))]
+
+namespace LiveSplit.AutoTwitch
 {
-    class AutoTwitchFactory
+    class TwitchFactory : IComponentFactory
     {
+        public string ComponentName => "Auto Twitch";
+
+        public string Description => "An Twitch component that will automatically send messages on events of your choosing.";
+
+        public ComponentCategory Category => ComponentCategory.Other;
+
+        public IComponent Create(LiveSplitState state) => new AutoTwitch(state);
+
+        public string UpdateName => ComponentName;
+
+        public string XMLURL => "";
+
+        public string UpdateURL => "http://livesplit.org/update/";
+
+        public Version Version => Version.Parse("1.0");
     }
 }
