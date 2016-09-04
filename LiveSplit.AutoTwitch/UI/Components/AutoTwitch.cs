@@ -24,24 +24,24 @@ namespace LiveSplit.AutoTwitch
         {
             Activated = true;
             State = state;
-            Settings = new AutoTwitchSettings();
+            Settings = new AutoTwitchSettings(state);
 
             state.OnSplit += State_OnSplit;
         }
+
+        // Methods
         private void State_OnSplit(object sender, EventArgs e)
         {
-            var lastSplit = State.CurrentSplitIndex - 1;
 
-            TimeSpan? curSegment = LiveSplitStateHelper.GetPreviousSegmentTime(State, lastSplit, State.CurrentTimingMethod);
-            
-            //Best Split
-            if (curSegment != null)
+            foreach (var item in Settings.MessageList)
             {
-                if (State.Run[lastSplit].BestSegmentTime[State.CurrentTimingMethod] == null || curSegment < State.Run[lastSplit].BestSegmentTime[State.CurrentTimingMethod])
+                if(item.Message.Events == MessageEvent.BestSegment)
                 {
                     
+                    Console.WriteLine(item.Message.BuildMessage());
                 }
             }
+
         }
 
         // Interface Implementation

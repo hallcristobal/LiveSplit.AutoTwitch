@@ -38,9 +38,14 @@
             this.lblOAuth = new System.Windows.Forms.Label();
             this.lblChannel = new System.Windows.Forms.Label();
             this.pbHelp = new System.Windows.Forms.PictureBox();
+            this.gbMessages = new System.Windows.Forms.GroupBox();
+            this.tlpMessageList = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAddMessage = new System.Windows.Forms.Button();
             this.gbTwitch.SuspendLayout();
             this.tlpTwitch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbHelp)).BeginInit();
+            this.gbMessages.SuspendLayout();
+            this.tlpMessageList.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbTwitch
@@ -133,6 +138,7 @@
             // 
             // pbHelp
             // 
+            this.pbHelp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbHelp.Image = ((System.Drawing.Image)(resources.GetObject("pbHelp.Image")));
             this.pbHelp.Location = new System.Drawing.Point(88, 32);
             this.pbHelp.Name = "pbHelp";
@@ -144,17 +150,56 @@
             this.pbHelp.MouseEnter += new System.EventHandler(this.pbHelp_MouseEnter);
             this.pbHelp.MouseLeave += new System.EventHandler(this.pbHelp_MouseLeave);
             // 
+            // gbMessages
+            // 
+            this.gbMessages.Controls.Add(this.tlpMessageList);
+            this.gbMessages.Location = new System.Drawing.Point(4, 116);
+            this.gbMessages.Name = "gbMessages";
+            this.gbMessages.Size = new System.Drawing.Size(469, 48);
+            this.gbMessages.TabIndex = 1;
+            this.gbMessages.TabStop = false;
+            this.gbMessages.Text = "Messages";
+            // 
+            // tlpMessageList
+            // 
+            this.tlpMessageList.ColumnCount = 2;
+            this.tlpMessageList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.46652F));
+            this.tlpMessageList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.53348F));
+            this.tlpMessageList.Controls.Add(this.btnAddMessage, 1, 0);
+            this.tlpMessageList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMessageList.Location = new System.Drawing.Point(3, 16);
+            this.tlpMessageList.Name = "tlpMessageList";
+            this.tlpMessageList.RowCount = 1;
+            this.tlpMessageList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tlpMessageList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMessageList.Size = new System.Drawing.Size(463, 29);
+            this.tlpMessageList.TabIndex = 0;
+            // 
+            // btnAddMessage
+            // 
+            this.btnAddMessage.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnAddMessage.Location = new System.Drawing.Point(385, 3);
+            this.btnAddMessage.Name = "btnAddMessage";
+            this.btnAddMessage.Size = new System.Drawing.Size(75, 23);
+            this.btnAddMessage.TabIndex = 0;
+            this.btnAddMessage.Text = "Add Message";
+            this.btnAddMessage.UseVisualStyleBackColor = true;
+            this.btnAddMessage.Click += new System.EventHandler(this.btnAddMessage_Click);
+            // 
             // AutoTwitchSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.gbMessages);
             this.Controls.Add(this.gbTwitch);
             this.Name = "AutoTwitchSettings";
-            this.Size = new System.Drawing.Size(476, 453);
+            this.Size = new System.Drawing.Size(476, 169);
             this.gbTwitch.ResumeLayout(false);
             this.tlpTwitch.ResumeLayout(false);
             this.tlpTwitch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbHelp)).EndInit();
+            this.gbMessages.ResumeLayout(false);
+            this.tlpMessageList.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -170,5 +215,8 @@
         private System.Windows.Forms.Label lblOAuth;
         private System.Windows.Forms.Label lblChannel;
         private System.Windows.Forms.PictureBox pbHelp;
+        private System.Windows.Forms.GroupBox gbMessages;
+        private System.Windows.Forms.TableLayoutPanel tlpMessageList;
+        private System.Windows.Forms.Button btnAddMessage;
     }
 }

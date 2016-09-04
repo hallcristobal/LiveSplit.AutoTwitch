@@ -38,6 +38,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\bin\Debug\Components\LiveSplit.Counter.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell">
+      <HintPath>..\..\..\Libs\Windows API Code Pack\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="SpeedrunComSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libs\SpeedrunComSharp\SpeedrunComSharp\bin\Debug with API Calls\SpeedrunComSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -78,6 +85,10 @@
     <ProjectReference Include="..\..\..\LiveSplit.Core\LiveSplit.Core.csproj">
       <Project>{6de847db-20a3-4848-aeee-1b4364aecdfb}</Project>
       <Name>LiveSplit.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\LiveSplit.View\LiveSplit.View.csproj">
+      <Project>{F8CF1482-0687-44F3-ABA1-967E10C3BB96}</Project>
+      <Name>LiveSplit.View</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\UpdateManager\UpdateManager.csproj">
       <Project>{56dea3a0-2eb7-493b-b50f-a5e3aa8ae52a}</Project>
