@@ -10,21 +10,29 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using System.Xml;
 using LiveSplit.UI;
+using TwitchCom;
 
 namespace LiveSplit.AutoTwitch
 {
-    class AutoTwitch : LogicComponent, IDeactivatableComponent
+    public class AutoTwitch : LogicComponent, IDeactivatableComponent
     {
         // Variables
         AutoTwitchSettings Settings { get; set; }
         LiveSplitState State { get; set; }
+        Chat chat { get; set; }
+
+        public bool Connected { get; set; } = false;
+
+        public event EventHandler Connect;
+
+
 
         // Constructor
         public AutoTwitch(LiveSplitState state)
         {
             Activated = true;
             State = state;
-            Settings = new AutoTwitchSettings(state);
+            Settings = new AutoTwitchSettings(state, this);
 
             state.OnSplit += State_OnSplit;
         }
@@ -37,11 +45,35 @@ namespace LiveSplit.AutoTwitch
             {
                 if(item.Message.Events == MessageEvent.BestSegment)
                 {
-                    
                     Console.WriteLine(item.Message.BuildMessage());
                 }
             }
 
+        }
+
+        public bool TwitchConnect()
+        {
+            chat = new Chat(new TwitchUser(Settings.UserName.ToLower(), Settings.OAuth));
+            try
+            {
+                chat.Connect();
+                if (chat.Connected)
+                {
+                    chat.joinChannel(Settings.Channel.ToLower());
+                    Connected = true;
+                    return true;
+                }
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public void TwitchDisconnect()
+        {
+            //TODO TwitchCom Disconnect
         }
 
         // Interface Implementation

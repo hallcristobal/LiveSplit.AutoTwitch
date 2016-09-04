@@ -38,6 +38,8 @@
             this.lblOAuth = new System.Windows.Forms.Label();
             this.lblChannel = new System.Windows.Forms.Label();
             this.pbHelp = new System.Windows.Forms.PictureBox();
+            this.btnConnect = new System.Windows.Forms.Button();
+            this.lblConnect = new System.Windows.Forms.Label();
             this.gbMessages = new System.Windows.Forms.GroupBox();
             this.tlpMessageList = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddMessage = new System.Windows.Forms.Button();
@@ -51,19 +53,20 @@
             // gbTwitch
             // 
             this.gbTwitch.Controls.Add(this.tlpTwitch);
-            this.gbTwitch.Location = new System.Drawing.Point(4, 4);
+            this.gbTwitch.Location = new System.Drawing.Point(7, 4);
             this.gbTwitch.Name = "gbTwitch";
-            this.gbTwitch.Size = new System.Drawing.Size(469, 106);
+            this.gbTwitch.Size = new System.Drawing.Size(449, 135);
             this.gbTwitch.TabIndex = 0;
             this.gbTwitch.TabStop = false;
-            this.gbTwitch.Text = "Twitch Info";
+            this.gbTwitch.Text = "Twitch";
             // 
             // tlpTwitch
             // 
-            this.tlpTwitch.ColumnCount = 3;
+            this.tlpTwitch.ColumnCount = 4;
             this.tlpTwitch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
             this.tlpTwitch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tlpTwitch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpTwitch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138F));
             this.tlpTwitch.Controls.Add(this.tbUsername, 2, 0);
             this.tlpTwitch.Controls.Add(this.tbOAuth, 2, 1);
             this.tlpTwitch.Controls.Add(this.tbChannel, 2, 2);
@@ -71,39 +74,45 @@
             this.tlpTwitch.Controls.Add(this.lblOAuth, 0, 1);
             this.tlpTwitch.Controls.Add(this.lblChannel, 0, 2);
             this.tlpTwitch.Controls.Add(this.pbHelp, 1, 1);
+            this.tlpTwitch.Controls.Add(this.btnConnect, 3, 3);
+            this.tlpTwitch.Controls.Add(this.lblConnect, 0, 3);
             this.tlpTwitch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpTwitch.Location = new System.Drawing.Point(3, 16);
             this.tlpTwitch.Name = "tlpTwitch";
-            this.tlpTwitch.RowCount = 3;
+            this.tlpTwitch.RowCount = 4;
             this.tlpTwitch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tlpTwitch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tlpTwitch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tlpTwitch.Size = new System.Drawing.Size(463, 87);
+            this.tlpTwitch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tlpTwitch.Size = new System.Drawing.Size(443, 116);
             this.tlpTwitch.TabIndex = 0;
             // 
             // tbUsername
             // 
             this.tbUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpTwitch.SetColumnSpan(this.tbUsername, 2);
             this.tbUsername.Location = new System.Drawing.Point(117, 4);
             this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(343, 20);
+            this.tbUsername.Size = new System.Drawing.Size(323, 20);
             this.tbUsername.TabIndex = 0;
             // 
             // tbOAuth
             // 
             this.tbOAuth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpTwitch.SetColumnSpan(this.tbOAuth, 2);
             this.tbOAuth.Location = new System.Drawing.Point(117, 33);
             this.tbOAuth.Name = "tbOAuth";
-            this.tbOAuth.Size = new System.Drawing.Size(343, 20);
+            this.tbOAuth.Size = new System.Drawing.Size(323, 20);
             this.tbOAuth.TabIndex = 1;
             this.tbOAuth.UseSystemPasswordChar = true;
             // 
             // tbChannel
             // 
             this.tbChannel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpTwitch.SetColumnSpan(this.tbChannel, 2);
             this.tbChannel.Location = new System.Drawing.Point(117, 62);
             this.tbChannel.Name = "tbChannel";
-            this.tbChannel.Size = new System.Drawing.Size(343, 20);
+            this.tbChannel.Size = new System.Drawing.Size(323, 20);
             this.tbChannel.TabIndex = 2;
             // 
             // lblUsername
@@ -150,12 +159,36 @@
             this.pbHelp.MouseEnter += new System.EventHandler(this.pbHelp_MouseEnter);
             this.pbHelp.MouseLeave += new System.EventHandler(this.pbHelp_MouseLeave);
             // 
+            // btnConnect
+            // 
+            this.btnConnect.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnConnect.Location = new System.Drawing.Point(365, 90);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(75, 23);
+            this.btnConnect.TabIndex = 7;
+            this.btnConnect.Text = "Connect";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            // 
+            // lblConnect
+            // 
+            this.lblConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblConnect.AutoSize = true;
+            this.tlpTwitch.SetColumnSpan(this.lblConnect, 3);
+            this.lblConnect.Location = new System.Drawing.Point(3, 87);
+            this.lblConnect.Name = "lblConnect";
+            this.lblConnect.Size = new System.Drawing.Size(299, 29);
+            this.lblConnect.TabIndex = 8;
+            this.lblConnect.Text = "Disconnected from Twitch Chat";
+            // 
             // gbMessages
             // 
             this.gbMessages.Controls.Add(this.tlpMessageList);
-            this.gbMessages.Location = new System.Drawing.Point(4, 116);
+            this.gbMessages.Location = new System.Drawing.Point(10, 145);
             this.gbMessages.Name = "gbMessages";
-            this.gbMessages.Size = new System.Drawing.Size(469, 48);
+            this.gbMessages.Size = new System.Drawing.Size(449, 48);
             this.gbMessages.TabIndex = 1;
             this.gbMessages.TabStop = false;
             this.gbMessages.Text = "Messages";
@@ -172,13 +205,13 @@
             this.tlpMessageList.RowCount = 1;
             this.tlpMessageList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tlpMessageList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMessageList.Size = new System.Drawing.Size(463, 29);
+            this.tlpMessageList.Size = new System.Drawing.Size(443, 29);
             this.tlpMessageList.TabIndex = 0;
             // 
             // btnAddMessage
             // 
             this.btnAddMessage.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnAddMessage.Location = new System.Drawing.Point(385, 3);
+            this.btnAddMessage.Location = new System.Drawing.Point(365, 3);
             this.btnAddMessage.Name = "btnAddMessage";
             this.btnAddMessage.Size = new System.Drawing.Size(75, 23);
             this.btnAddMessage.TabIndex = 0;
@@ -193,7 +226,7 @@
             this.Controls.Add(this.gbMessages);
             this.Controls.Add(this.gbTwitch);
             this.Name = "AutoTwitchSettings";
-            this.Size = new System.Drawing.Size(476, 169);
+            this.Size = new System.Drawing.Size(459, 198);
             this.gbTwitch.ResumeLayout(false);
             this.tlpTwitch.ResumeLayout(false);
             this.tlpTwitch.PerformLayout();
@@ -218,5 +251,7 @@
         private System.Windows.Forms.GroupBox gbMessages;
         private System.Windows.Forms.TableLayoutPanel tlpMessageList;
         private System.Windows.Forms.Button btnAddMessage;
+        private System.Windows.Forms.Button btnConnect;
+        private System.Windows.Forms.Label lblConnect;
     }
 }

@@ -142,6 +142,27 @@ namespace LiveSplit.AutoTwitch
                 }
             }
         }
+        public string Title
+        {
+            get
+            {
+                switch (Message.Events)
+                {
+                    case MessageEvent.Split:
+                        return "Split Message";
+                    case MessageEvent.Reset:
+                        return "Reset Message";
+                    case MessageEvent.BestSegment:
+                        return "Best Segment Message";
+                    case MessageEvent.PersonalBest:
+                        return "Personal Best Message";
+                    case MessageEvent.FinishRun:
+                        return "Finished Run Message";
+                    default:
+                        return "Twitch Message";
+                }
+            }
+        }
 
         private bool curTime { get; set; } = true;
 
@@ -158,14 +179,15 @@ namespace LiveSplit.AutoTwitch
             cbAccuracy.Items.AddRange(Accuracys);
             cbTimingMethod.Items.AddRange(TimingMethods);
             cbTimeFormat.Items.AddRange(TimeFormats.Reverse().ToArray());
+            tbMessage.TextAlign = HorizontalAlignment.Right;
             
 
             Message = new Message(state, TimingMethod.GameTime);
 
             MessageList = messageList;
             State = state;
-            
 
+            gbMessage.DataBindings.Add("Text", this, "Title", false, DataSourceUpdateMode.OnPropertyChanged);
             tbMessage.DataBindings.Add("Text", this, "Value", false, DataSourceUpdateMode.OnPropertyChanged);
             cbEvents.DataBindings.Add("SelectedItem", this, "Event", false, DataSourceUpdateMode.OnPropertyChanged);
             cbAccuracy.DataBindings.Add("SelectedItem", this, "Accuracy", false, DataSourceUpdateMode.OnPropertyChanged);
